@@ -1,0 +1,72 @@
+#pragma version 6
+//**************************************************************************************************
+// File             : d4tClear.teal
+// Author           : DeFi4NFT Software Development Team
+// Version          : 0.0.1
+// Date             : 29-Apr-22
+// Brief            : Contract opts out users. Releasing minimum balance required.
+// Maintainer	    : Kaleb
+//
+//**************************************************************************************************
+// Revision History
+//**************************************************************************************************
+// 
+// 
+//**************************************************************************************************
+// Constraints
+//**************************************************************************************************
+//
+//
+//**************************************************************************************************
+// Requirements
+//**************************************************************************************************
+//	A brief description on what this brings to the ecosystem
+//
+//
+//**************************************************************************************************
+// Implementation Description
+//**************************************************************************************************
+//	A brief description on the contracts overall functionality (dot point formation)
+//
+//
+//**************************************************************************************************
+// To Do Items
+//**************************************************************************************************
+// 1. Complete documentation
+//
+//**************************************************************************************************
+// Scratch Space Index
+//**************************************************************************************************
+//
+// [9]    Stores return log values
+//
+//
+//**************************************************************************************************
+// Initialisation + Configuration Functions
+//**************************************************************************************************
+txn Sender
+global CurrentApplicationID
+byte "camt"
+app_local_get_ex
+bz delete_local_states
+err
+
+delete_local_states:
+	txn Sender
+	dup
+	dup2
+	dup2
+	byte "xids" // participation assets
+	app_local_del
+	byte "aamt" // allowed borrow amount
+	app_local_del
+	byte "camt" // collateral amount
+	app_local_del
+	byte "lamt" // loan amount
+	app_local_del
+	byte "lvr" // last valid round of lending offer
+	app_local_del
+	byte "lsa" // hash identifier of logic sig account
+	app_local_del
+	int 1
+	return

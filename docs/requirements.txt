@@ -1,0 +1,7 @@
+# requirments
+
+sphinx==4.5.0
+sphinx_rtd_theme==1.0.0
+readthedocs-sphinx-search==0.1.1
+myst-parser==0.17.2
+sphinxcontrib.mermaid==0.7.1

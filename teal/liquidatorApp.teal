@@ -1,0 +1,405 @@
+#pragma version 6
+//**************************************************************************************************
+// File             : liquidatorApp.teal
+// Author           : DeFi4NFT Software Development Team
+// Version          : 0.0.1
+// Date             : 29-Apr-22
+// Brief            : Contract implements clawback of assets configured for DeFi4
+// Maintainer	    : Kaleb
+//
+//**************************************************************************************************
+// Revision History
+//**************************************************************************************************
+// 
+// 
+//**************************************************************************************************
+// Constraints
+//**************************************************************************************************
+//
+//
+//**************************************************************************************************
+// Requirements
+//**************************************************************************************************
+//	A brief description on what this brings to the ecosystem
+//
+//
+//**************************************************************************************************
+// Implementation Description
+//**************************************************************************************************
+//	A brief description on the contracts overall functionality (dot point formation)
+//
+//
+//**************************************************************************************************
+// To Do Items
+//**************************************************************************************************
+// 1. Complete documentation
+//
+//**************************************************************************************************
+// Scratch Space Index
+//**************************************************************************************************
+//
+// [9]    Stores return log values
+//
+//
+//**************************************************************************************************
+// Initialisation + Configuration Functions
+//**************************************************************************************************
+
+txn OnCompletion
+int NoOp
+==
+bnz handle_noop
+
+txn OnCompletion
+int UpdateApplication
+==
+bnz creator_only
+
+txn OnCompletion
+int DeleteApplication
+==
+bnz creator_only
+
+// Unexpected OnCompletion value. Should be unreachable.
+err
+
+// Handle NoOp
+handle_noop:
+	// Handle liquidate
+	// (liquidatee, reciever, xaid)
+	txna ApplicationArgs 0
+	method "liquidate(axfer,account,account,asset)void"
+	==
+	bnz liquidate
+
+	// Handle transfer excess asset
+	// (sender, reciever, xaid, claw_amt)
+	txna ApplicationArgs 0
+	method "send(account,account,asset,uint64)void"
+	==
+	bnz send
+
+	// Handle manage app
+	// (mng,dusd,usdc) as foreign app and foreign assets
+	txna ApplicationArgs 0
+	method "manage(application,asset,asset)void"
+	==
+	bnz manage
+
+	// Handle create app
+	// (mng,dusd,usdc) as foreign app and foreign assets
+	txna ApplicationArgs 0
+	method "create(application)void"
+	==
+	bnz create
+
+// TODO: monetization feature
+	// Handle redeem
+//	txna ApplicationArgs 0
+//	method "redeem(void)void"
+//	==
+//	bnz redeem
+
+	// no other cases
+	err
+
+// Handle liquidate
+liquidate:
+	txna ApplicationArgs 1 // liquidatee
+	txna Assets 0 // xaid
+	txna ApplicationArgs 2 // clawback reciever
+	store 3 // clawback receiver
+	store 2 // xaid
+	store 1 // liquidatee
+	// check loan health
+	callsub verify_call
+	callsub check_loan_health
+	// clawback trigger
+	bnz clawback_asset
+	err
+
+verify_call:
+	gtxn 0 AssetReceiver
+	global CurrentApplicationAddress
+	==
+	assert
+	gtxn 0 XferAsset
+	global CurrentApplicationID
+	byte "mng"
+	app_global_get_ex
+	assert
+	byte "usdc"
+	app_global_get_ex
+	assert
+	==
+	gtxn 0 XferAsset
+	global CurrentApplicationID
+	byte "mng"
+	app_global_get_ex
+	assert
+	byte "dusd"
+	app_global_get_ex
+	assert
+	==
+	||
+	bnz fetch_asset
+	err
+
+fetch_asset:
+	load 1 // liquidatee
+	global CurrentApplicationID
+	byte "mng"
+	app_global_get_ex
+	assert
+	byte "d4t"
+	app_global_get_ex
+	assert
+	byte "xids"
+	app_local_get_ex
+	assert
+	load 4 // pointer
+	dup2
+	swap
+	len
+	<
+	bz reject
+	extract_uint64
+	load 2 // xaid
+	==
+	int 8 // increment pointer
+	load 4
+	+
+	store 4
+	bnz fetch_asset
+	load 4 // pointer
+	int 8 // adjust pointer
+	-
+	store 4
+	retsub
+
+check_loan_health:
+	load 1 // liquidatee
+	global CurrentApplicationID
+	byte "mng"
+	app_global_get_ex
+	assert
+	byte "d4t"
+	app_global_get_ex
+	assert
+	dup2
+	byte "lamt"
+	app_local_get_ex
+	assert
+	load 4 // pointer
+	extract_uint64
+	dup
+	dup
+	callsub forward_payment
+	// liquidation paid is atleast 5% more than loan taken
+	int 105
+	*
+	int 100
+	/
+	gtxn 0 AssetAmount
+	<=
+	assert
+	cover 2
+
+	byte "camt"
+	app_local_get_ex
+	assert
+	load 4 // pointer
+	extract_uint64
+	dup
+	store 0 // clawback amount
+	// oracle call
+	callsub oracle
+	*
+	int 90
+	*
+	int 100
+	/
+	>
+	retsub
+
+forward_payment:
+	itxn_begin
+	int 0
+	itxn_field Fee
+	int axfer
+	itxn_field TypeEnum
+	// lamt
+	itxn_field AssetAmount
+	global CurrentApplicationID
+	byte "mng"
+	app_global_get_ex
+	assert
+	byte "d4t"
+	app_global_get_ex
+	assert
+	app_params_get AppAddress
+	assert
+	itxn_field AssetReceiver
+	gtxn 0 XferAsset
+	itxn_field XferAsset
+	itxn_submit
+	retsub
+
+// Handle send
+send:
+	txna ApplicationArgs 4 // claw amount
+	txna ApplicationArgs 1 // sender
+	txna Assets 0 // xaid
+	txna ApplicationArgs 2 // reciever of clawback
+	store 3 // reciever of clawback
+	store 2 // xaid
+	store 1 // liquidatee
+	store 0 // clawback amount
+	// verify the call is from manager account
+	global CurrentApplicationID
+	byte "mng"
+	app_global_get_ex
+	assert
+	app_params_get AppAddress
+	assert
+	txn Sender
+	==
+	assert
+	// verify asset amount is not excess of uncollateralized amount
+	callsub verify_clawback
+	// clawback trigger
+	bnz clawback_asset
+	err
+
+verify_clawback:
+	// fetch appropriate collateral field
+	load 2 // xaid
+	load 1 // sender(liquidatee)
+	global CurrentApplicationID
+	byte "mng"
+	app_global_get_ex
+	assert
+	byte "d4t"
+	app_global_get_ex
+	assert
+	byte "xids"
+	app_local_get_ex
+	// if sender isn't opted into borrowing, jump to sending asset
+	bz clawback_asset
+	load 4 // pointer
+	extract_uint64
+	==
+	int 8 // increment pointer
+	load 4 
+	+
+	store 4
+	bz verify_clawback
+	load 4 // pointer
+	int 8 // adjust pointer
+	-
+	store 4
+	// verify sender asset balance can cover collateral
+	load 1 // sender(liquidatee)
+	load 2 // xaid
+	asset_holding_get AssetBalance
+	assert
+	load 0 // clawback amount
+	- // AssetBalance - clawback amount
+	load 1 // sender(liquidatee)
+	global CurrentApplicationID
+	byte "mng"
+	app_global_get_ex
+	assert
+	byte "d4t"
+	app_global_get_ex
+	assert
+	byte "camt"
+	app_local_get_ex
+	assert
+	load 4 // pointer
+	extract_uint64 // camt
+	>= // (AssetBalance - Clawback) >= camt
+	retsub
+
+clawback_asset:
+	itxn_begin
+	int 0
+	itxn_field Fee
+	int axfer
+	itxn_field TypeEnum
+	load 0 // clawback amount
+	itxn_field AssetAmount
+	load 1 // liquidatee
+	itxn_field AssetSender
+	load 3 // clawback reciever
+	itxn_field AssetReceiver
+	load 2 // xaid
+	itxn_field XferAsset
+	itxn_submit
+	int 1
+	return
+
+// Handle create
+create:
+	byte "mng"
+	txna Applications 1
+	app_global_put
+	b creator_only
+
+// Handle first call manager
+manage:
+	// Optin to USDCa
+	itxn_begin
+	int 0
+	itxn_field Fee
+	int axfer
+	itxn_field TypeEnum
+	int 0
+	itxn_field AssetAmount
+	global CurrentApplicationAddress // itxn sender
+	itxn_field AssetReceiver
+	global CurrentApplicationID
+	byte "mng"
+	app_global_get_ex
+	assert
+	byte "usdc"
+	app_global_get_ex
+	assert
+	itxn_field XferAsset
+	itxn_submit
+
+	// Optin to dusd
+	itxn_begin
+	int 0
+	itxn_field Fee
+	int axfer
+	itxn_field TypeEnum
+	int 0
+	itxn_field AssetAmount
+	global CurrentApplicationAddress // itxn sender
+	itxn_field AssetReceiver
+	global CurrentApplicationID
+	byte "mng"
+	app_global_get_ex
+	assert
+	byte "dusd"
+	app_global_get_ex
+	assert
+	itxn_field XferAsset
+	itxn_submit
+	b creator_only
+
+// function to fetch price from oracle
+oracle:
+	int 49000000  // oracle price
+	retsub
+
+// Allowing updating or deleting the app. For creator only
+creator_only:
+	global CreatorAddress
+	txn Sender
+	==
+	return
+
+reject:
+	err

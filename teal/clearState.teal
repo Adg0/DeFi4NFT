@@ -1,0 +1,4 @@
+#pragma version 6
+// A simple always true return.
+int 1
+return

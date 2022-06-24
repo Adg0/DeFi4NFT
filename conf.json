@@ -1,0 +1,12 @@
+{
+	"network":"SGO1GKSzyE7IEPItTxCByw9x8FmnrCDexi9/cOUJOiI=",
+	"dir":"./",
+	"abi_dir":"./abi/",
+	"teal_dir":"./teal/",
+	"codec_dir":"./codec/",
+	"dryrun_dir":"./dryrun/",
+	"response_dir":"./dryrun/response/",
+	"address":"http://localhost:4001",
+	"token":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+	"header":"X-API-Key"
+}

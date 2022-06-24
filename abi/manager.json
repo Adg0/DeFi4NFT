@@ -1,0 +1,169 @@
+{
+    "name": "manager",
+    "networks": {
+        "default": {
+            "appID": 84436122
+        },
+        "SGO1GKSzyE7IEPItTxCByw9x8FmnrCDexi9/cOUJOiI=": {
+            "appID": 84436122
+        },
+        "wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8=": {
+            "appID": 0
+        },
+		"mFgazF+2uRS1tMiL9dsj01hJGySEmPN28B/TjjvpVW0=":{
+			"appID": 0
+		}
+    },
+    "methods": [
+        {
+            "name": "create",
+            "desc": "creates the manager app",
+            "args": [
+                {
+                    "name": "USDC",
+                    "type": "asset",
+                    "desc": "USDC asset ID"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "fund",
+            "desc": "send a million dusd to an address",
+            "args": [
+                {
+                    "name": "receiver",
+                    "type": "account"
+                },
+                {
+                    "name": "dusd",
+                    "type": "asset"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "create_liquidator",
+            "desc": "create liqudator app",
+            "args": [
+                {
+                    "name": "lqtApproval",
+                    "type": "byte[]"
+                },
+                {
+                    "name": "lqtClear",
+                    "type": "byte[]"
+                }
+            ],
+            "returns": {
+                "type": "uint64",
+                "desc": "lqt"
+            }
+        },
+        {
+            "name": "create_child",
+            "desc": "create d4t borrow lend app, dusd and d4t assets",
+            "args": [
+                {
+                    "name": "USDC",
+                    "type": "asset"
+                },
+                {
+                    "name": "d4tApproval",
+                    "type": "byte[]"
+                },
+                {
+                    "name": "d4tClear",
+                    "type": "byte[]"
+                },
+                {
+                    "name": "lqt",
+                    "type": "application"
+                }
+            ],
+            "returns": {
+                "type": "uint64[3]",
+                "desc": "[d4t dusd inv]"
+            }
+        },
+        {
+            "name": "config",
+            "desc": "configure apps to optin to assets",
+            "args": [
+                {
+                    "name": "lqtApp",
+                    "type": "application"
+                },
+                {
+                    "name": "d4tApp",
+                    "type": "application"
+                },
+                {
+                    "name": "lqtAddress",
+                    "type": "account"
+                },
+                {
+                    "name": "d4tAddress",
+                    "type": "account"
+                },
+                {
+                    "name": "usdc",
+                    "type": "asset"
+                },
+                {
+                    "name": "dusd",
+                    "type": "asset"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "update_child_app",
+            "desc": "configure apps to optin to assets",
+            "args": [
+                {
+                    "name": "appID",
+                    "type": "application"
+                },
+                {
+                    "name": "approval",
+                    "type": "byte[]"
+                },
+                {
+                    "name": "clearState",
+                    "type": "byte[]"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "asset_config",
+            "desc": "configure asset freeze and clawback admins",
+            "args": [
+                {
+                    "name": "d4tID",
+                    "type": "application"
+                },
+                {
+                    "name": "lqtID",
+                    "type": "application"
+                },
+                {
+                    "name": "assetID",
+                    "type": "asset"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        }
+    ]
+}
