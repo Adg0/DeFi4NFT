@@ -1,9 +1,9 @@
-Welcome to Defi4!
+Welcome to DeFi4NFT!
 =================
 
 Guide
 ^^^^^
-Defi4NFT dapp is an NFT collateralizing app on Algorand. Powered by circle digital money, which let's you use any NFT you hold in Algorand as leverage for borrowing stable coin in Defi4.
+Defi4NFT dapp is an NFT collateralizing app on Algorand. Which let's you use any NFT you hold in Algorand as leverage for borrowing stable coin in DeFi4NFT.
 Leveraged NFT remains locked in your (*borrower*) address until the full loan amount is repaid, which is a **pure non-custodial** transaction.
 Assets(NFT) that require KYC or special permissions might benefit from this *pure non-custodial protocol*.
 
