@@ -6,7 +6,7 @@
 	"codec_dir":"./codec/",
 	"dryrun_dir":"./dryrun/",
 	"response_dir":"./dryrun/response/",
-	"address":"http://localhost:4001",
-	"token":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+	"address":"https://testnet-algorand.api.purestake.io/ps2",
+	"token":"O86R9ABxLt5WqcX48WsxB3XBC4yXncGA5meUHQEW",
 	"header":"X-API-Key"
 }

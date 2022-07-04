@@ -13,7 +13,7 @@ import (
 
 var (
 	usdc       = uint64(10458941)
-	collateral = uint64(2)
+	collateral = uint64(97931298)
 	mng        = uint64(84436122)
 	lqt        = uint64(84436752)
 	d4t        = uint64(84436769)
@@ -197,10 +197,14 @@ func TestEarn(t *testing.T) {
 	if err != nil {
 		t.Errorf("algodClient found error, %s", err)
 	}
+	txParams, err := algodClient.SuggestedParams().Do(context.Background())
+	if err != nil {
+		t.Errorf("Failed to get suggeted params: %+v", err)
+	}
 
 	xids := []uint64{collateral, dUSD, inv}
 	aamt := uint64(100000000)
-	lvr := uint64(172800) //+ uint64(txParams.FirstRoundValid)
+	lvr := uint64(172800) + uint64(txParams.FirstRoundValid)
 
 	lsigArgs := make([][]byte, 4)
 	var buf [4][8]byte
@@ -213,13 +217,13 @@ func TestEarn(t *testing.T) {
 	lsigArgs[2] = buf[2][:]
 	lsigArgs[3] = buf[3][:]
 
-	lsaRaw := CompileToLsig(algodClient, lsigArgs, getTeal("lsig"), "./codec/lender_lsig.codec", accts[1].PrivateKey)
+	lsaRaw := CompileToLsig(algodClient, lsigArgs, getTeal("lsig"), "./codec/lender_lsig.codec", accts[3].PrivateKey)
 	if lsaRaw.SigningKey == nil {
 		t.Errorf("lsig is empty")
 	}
 	lsa := sha256.Sum256(lsaRaw.Lsig.Logic)
 
-	err = Earn(algodClient, accts[1], xids, aamt, lvr, lsa[:4])
+	err = Earn(algodClient, accts[3], xids, aamt, lvr, lsa[:4])
 	if err != nil {
 		t.Errorf("test found error, %s", err)
 	}
@@ -248,10 +252,10 @@ func TestBorrow(t *testing.T) {
 	}
 
 	xids := []uint64{collateral}
-	camt := []uint64{20}
-	lamt := []uint64{10000000}
+	camt := []uint64{1}
+	lamt := []uint64{1000000}
 
-	err = Borrow(algodClient, accts[2], accts[1].Address, usdc, dUSD, mng, lqt, xids, camt, lamt, "./codec/lender_lsig.codec")
+	err = Borrow(algodClient, accts[4], accts[3].Address, usdc, dUSD, mng, lqt, xids, camt, lamt, "./codec/lender_lsig.codec")
 	if err != nil {
 		t.Errorf("test found error, %s", err)
 	}

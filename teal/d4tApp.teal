@@ -9,6 +9,8 @@
 //
 //**************************************************************************************************
 // Revision History
+// Version          : 0.0.2
+// Date             : 01-Jul-22
 //**************************************************************************************************
 // 
 // 
@@ -79,7 +81,7 @@ handle_noop:
 	// Handle borrowing
 	// (xids, camt, lamt,[lenders],[xids,dusd],[mng,lqt])
 	txna ApplicationArgs 0
-	method "borrow(axfer,uint64[],uint64[],uint64[],account,asset,asset,application,application)void"
+	method "borrow(uint64[],uint64[],uint64[],account,asset,asset,application,application)void"
 	==
 	bnz borrow
 
@@ -279,7 +281,7 @@ popcall:
 	retsub
 
 check_loan_health:
-	load 99 // xids local state
+	load 100
 	// if first time borrowing just jump to verify loan health
 	bz verify_loan_health
 	// continue and check if there is an existing loan

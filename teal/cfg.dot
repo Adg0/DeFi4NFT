@@ -1,0 +1,1206 @@
+digraph g{
+ ranksep = 1 
+ overlap = scale 
+139985933080224[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1">1. #pragma version 6</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="51">51. txn OnCompletion</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="52">52. int NoOp</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="53">53. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="54">54. bnz handle_noop</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=0]139985933080224:54:s -> 139985931768400:56:n;
+139985933080224:54:s -> 139985931768880:80:n;
+139985931768400[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="56">56. txn OnCompletion</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="57">57. int OptIn</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="58">58. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="59">59. bnz handle_optin</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=1]139985931768400:59:s -> 139985931768496:61:n;
+139985931768400:59:s -> 139985931753648:774:n;
+139985931768496[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="61">61. txn OnCompletion</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="62">62. int CloseOut</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="63">63. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="64">64. bnz handle_closeout</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=2]139985931768496:64:s -> 139985931768592:66:n;
+139985931768496:64:s -> 139985931754992:999:n;
+139985931768592[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="66">66. txn OnCompletion</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="67">67. int UpdateApplication</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="68">68. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="69">69. bnz creator_only</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=3]139985931768592:69:s -> 139985931768688:71:n;
+139985931768592:69:s -> 139985931817456:1094:n;
+139985931768688[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="71">71. txn OnCompletion</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="72">72. int DeleteApplication</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="73">73. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="74">74. bnz creator_only</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=4]139985931768688:74:s -> 139985931768784:77:n;
+139985931768688:74:s -> 139985931817456:1094:n;
+139985931768784[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="77">77. err</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=5]139985931768880[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="80">80. handle_noop:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="83">83. txna ApplicationArgs 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="85">85. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="86">86. bnz borrow</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=6]139985931768880:86:s -> 139985931768976:90:n;
+139985931768880:86:s -> 139985931769648:134:n;
+139985931768976[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="90">90. txna ApplicationArgs 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="92">92. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="93">93. bnz change_collateral_amount</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=7]139985931768976:93:s -> 139985931769072:97:n;
+139985931768976:93:s -> 139985931752592:605:n;
+139985931769072[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="97">97. txna ApplicationArgs 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="99">99. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="100">100. bnz earn</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=8]139985931769072:100:s -> 139985931769168:104:n;
+139985931769072:100:s -> 139985931753168:700:n;
+139985931769168[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="104">104. txna ApplicationArgs 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="106">106. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="107">107. bnz repay</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=9]139985931769168:107:s -> 139985931769264:111:n;
+139985931769168:107:s -> 139985931753744:790:n;
+139985931769264[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="111">111. txna ApplicationArgs 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="113">113. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="114">114. bnz claim</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=10]139985931769264:114:s -> 139985931769360:118:n;
+139985931769264:114:s -> 139985931754704:942:n;
+139985931769360[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="118">118. txna ApplicationArgs 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="120">120. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="121">121. bnz create</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=11]139985931769360:121:s -> 139985931769456:125:n;
+139985931769360:121:s -> 139985931753456:724:n;
+139985931769456[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="125">125. txna ApplicationArgs 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="127">127. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="128">128. bnz manage</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=12]139985931769456:128:s -> 139985931769552:131:n;
+139985931769456:128:s -> 139985931753552:731:n;
+139985931769552[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="131">131. err</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=13]139985931769648[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="134">134. borrow:</TD></TR>
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="135">135. txna ApplicationArgs 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="136">136. callsub trim_length</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=14]139985931769648:136:s -> 139985931770128:161:n;
+139985931769744[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="// camt" HREF="bogus" ALIGN="LEFT" PORT="137">137. txna ApplicationArgs 2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="138">138. callsub trim_length</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=15]139985931769744:138:s -> 139985931770128:161:n;
+139985931769840[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="// lamt" HREF="bogus" ALIGN="LEFT" PORT="139">139. txna ApplicationArgs 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="140">140. callsub trim_length</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=16]139985931769840:140:s -> 139985931770128:161:n;
+139985931769936[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="141">141. store 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="142">142. store 2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="143">143. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="144">144. len</TD></TR>
+<TR><TD TOOLTIP="// length of args passed" HREF="bogus" ALIGN="LEFT" PORT="145">145. store 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="146">146. store 1</TD></TR>
+<TR><TD TOOLTIP="// length of xids" HREF="bogus" ALIGN="LEFT" PORT="148">148. load 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="149">149. dup</TD></TR>
+<TR><TD TOOLTIP="// camt" HREF="bogus" ALIGN="LEFT" PORT="150">150. load 2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="151">151. len</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="152">152. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="153">153. assert</TD></TR>
+<TR><TD TOOLTIP="// lamt" HREF="bogus" ALIGN="LEFT" PORT="154">154. load 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="155">155. len</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="156">156. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="157">157. bnz check_args</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=17]139985931769936:157:s -> 139985931770032:158:n;
+139985931769936:157:s -> 139985931770224:169:n;
+139985931770032[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="158">158. err</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=18]139985931770128[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="161">161. trim_length:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="162">162. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="163">163. len</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="164">164. int 2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="165">165. swap</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="166">166. substring3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="167">167. retsub</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=19]139985931770128:167:s -> 139985931769744:137:n;
+139985931770128:167:s -> 139985931769840:139:n;
+139985931770128:167:s -> 139985931769936:141:n;
+139985931770128:167:s -> 139985931753264:707:n;
+139985931770128:167:s -> 139985931753360:719:n;
+139985931770128:167:s -> 139985931753840:793:n;
+139985931770128:167:s -> 139985931753936:795:n;
+139985931770224[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="169">169. check_args:</TD></TR>
+<TR><TD TOOLTIP="// lamt" HREF="bogus" ALIGN="LEFT" PORT="171">171. load 3</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="172">172. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="173">173. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="174">174. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="175">175. &gt;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="176">176. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="177">177. callsub verify_asset</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=20]139985931770224:177:s -> 139985931770512:181:n;
+139985931770320[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="178">178. bnz check_loan_health</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=21]139985931770320:178:s -> 139985931770416:179:n;
+139985931770320:178:s -> 139985931771280:283:n;
+139985931770416[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="179">179. err</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=22]139985931770512[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="181">181. verify_asset:</TD></TR>
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="183">183. load 1</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="184">184. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="185">185. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="186">186. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="187">187. dup</TD></TR>
+<TR><TD TOOLTIP="// either this contract is manager or zeroAddress for manager" HREF="bogus" ALIGN="LEFT" PORT="188">188. asset_params_get AssetManager</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="189">189. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="190">190. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="191">191. global ZeroAddress</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="192">192. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="193">193. swap</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="194">194. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="195">195. byte &quot;mng&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="196">196. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="197">197. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="198">198. app_params_get AppAddress</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="199">199. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="200">200. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="201">201. ||</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="202">202. assert</TD></TR>
+<TR><TD TOOLTIP="// this contract is freeze admin" HREF="bogus" ALIGN="LEFT" PORT="203">203. asset_params_get AssetFreeze</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="204">204. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="205">205. global CurrentApplicationAddress</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="206">206. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="207">207. assert</TD></TR>
+<TR><TD TOOLTIP="// liquidator contract is clawback admin" HREF="bogus" ALIGN="LEFT" PORT="208">208. asset_params_get AssetClawback</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="209">209. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="210">210. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="211">211. byte &quot;mng&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="212">212. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="213">213. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="214">214. byte &quot;lqt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="215">215. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="216">216. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="217">217. app_params_get AppAddress</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="218">218. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="219">219. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="220">220. callsub verify_borrower_has_collateral</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=23]139985931770512:220:s -> 139985931770704:224:n;
+139985931770608[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="221">221. &amp;&amp;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="222">222. retsub</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=24]139985931770608:222:s -> 139985931770320:178:n;
+139985931770608:222:s -> 139985931752880:627:n;
+139985931770704[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="224">224. verify_borrower_has_collateral:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="225">225. txn Sender</TD></TR>
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="226">226. load 1</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="227">227. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="228">228. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="229">229. asset_holding_get AssetBalance</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="230">230. assert</TD></TR>
+<TR><TD TOOLTIP="// camt" HREF="bogus" ALIGN="LEFT" PORT="231">231. load 2</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="232">232. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="233">233. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="234">234. callsub previous_collateral</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=25]139985931770704:234:s -> 139985931770896:239:n;
+139985931770800[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="235">235. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="236">236. &gt;=</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="237">237. retsub</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=26]139985931770800:237:s -> 139985931770608:221:n;
+139985931770896[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="239">239. previous_collateral:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="240">240. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="241">241. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="242">242. byte &quot;xids&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="243">243. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="244">244. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="245">245. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="246">246. dup</TD></TR>
+<TR><TD TOOLTIP="// xids local state" HREF="bogus" ALIGN="LEFT" PORT="247">247. store 99</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="248">248. len</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="249">249. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="250">250. &gt;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="251">251. bz popcall</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=27]139985931770896:251:s -> 139985931770992:252:n;
+139985931770896:251:s -> 139985931771184:276:n;
+139985931770992[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="252">252. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="253">253. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="254">254. load 1</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="255">255. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="256">256. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="257">257. ==</TD></TR>
+<TR><TD TOOLTIP="// increment pointer" HREF="bogus" ALIGN="LEFT" PORT="258">258. int 8</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="259">259. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="260">260. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="261">261. store 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="262">262. bz previous_collateral</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=28]139985931770992:262:s -> 139985931771088:263:n;
+139985931770992:262:s -> 139985931770896:239:n;
+139985931771088[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="263">263. load 100</TD></TR>
+<TR><TD TOOLTIP="// adjust pointer" HREF="bogus" ALIGN="LEFT" PORT="264">264. int 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="265">265. -</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="266">266. store 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="267">267. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="268">268. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="269">269. byte &quot;camt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="270">270. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="271">271. assert</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="272">272. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="273">273. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="274">274. retsub</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=29]139985931771088:274:s -> 139985931770800:235:n;
+139985931771184[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="276">276. popcall:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="277">277. pop</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="278">278. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="279">279. dup</TD></TR>
+<TR><TD TOOLTIP="// reset temp pointer" HREF="bogus" ALIGN="LEFT" PORT="280">280. store 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="281">281. retsub</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=30]139985931771280[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="283">283. check_loan_health:</TD></TR>
+<TR><TD TOOLTIP="// xids local state" HREF="bogus" ALIGN="LEFT" PORT="284">284. load 99</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="286">286. bz verify_loan_health</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=31]139985931771280:286:s -> 139985931771376:288:n;
+139985931771280:286:s -> 139985931771760:337:n;
+139985931771376[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="288">288. b loop_for_existing_loan</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=32]139985931771376:288:s -> 139985931771472:290:n;
+139985931771472[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="290">290. loop_for_existing_loan:</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="292">292. load 100</TD></TR>
+<TR><TD TOOLTIP="// xids local state" HREF="bogus" ALIGN="LEFT" PORT="293">293. load 99</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="294">294. len</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="295">295. &lt;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="296">296. bz verify_loan_health</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=33]139985931771472:296:s -> 139985931771568:299:n;
+139985931771472:296:s -> 139985931771760:337:n;
+139985931771568[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="299">299. load 1</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="300">300. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="301">301. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="// xids local state" HREF="bogus" ALIGN="LEFT" PORT="302">302. load 99</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="303">303. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="304">304. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="305">305. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="307">307. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="308">308. int 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="309">309. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="310">310. store 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="311">311. bz loop_for_existing_loan</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=34]139985931771568:311:s -> 139985931771664:313:n;
+139985931771568:311:s -> 139985931771472:290:n;
+139985931771664[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="313">313. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="314">314. int 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="315">315. -</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="316">316. store 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="318">318. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="319">319. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="320">320. byte &quot;lamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="321">321. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="322">322. assert</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="323">323. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="324">324. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="// lamt local state" HREF="bogus" ALIGN="LEFT" PORT="325">325. store 103</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="327">327. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="328">328. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="329">329. byte &quot;camt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="330">330. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="331">331. assert</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="332">332. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="333">333. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="// camt local state" HREF="bogus" ALIGN="LEFT" PORT="334">334. store 102</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="335">335. b verify_loan_health</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=35]139985931771664:335:s -> 139985931771760:337:n;
+139985931771760[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="337">337. verify_loan_health:</TD></TR>
+<TR><TD TOOLTIP="// lamt local state" HREF="bogus" ALIGN="LEFT" PORT="338">338. load 103</TD></TR>
+<TR><TD TOOLTIP="// lamt" HREF="bogus" ALIGN="LEFT" PORT="339">339. load 3</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="340">340. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="341">341. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="342">342. dup</TD></TR>
+<TR><TD TOOLTIP="// 3% fee included" HREF="bogus" ALIGN="LEFT" PORT="343">343. int 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="344">344. *</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="345">345. int 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="346">346. /</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="347">347. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="348">348. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="349">349. dup</TD></TR>
+<TR><TD TOOLTIP="// new lamt change at pointer" HREF="bogus" ALIGN="LEFT" PORT="350">350. store 203</TD></TR>
+<TR><TD TOOLTIP="// camt local state" HREF="bogus" ALIGN="LEFT" PORT="352">352. load 102</TD></TR>
+<TR><TD TOOLTIP="// camt" HREF="bogus" ALIGN="LEFT" PORT="353">353. load 2</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="354">354. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="355">355. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="356">356. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="357">357. dup</TD></TR>
+<TR><TD TOOLTIP="// new camt change at pointer" HREF="bogus" ALIGN="LEFT" PORT="358">358. store 202</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="360">360. callsub oracle</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=36]139985931771760:360:s -> 139985931817360:1089:n;
+139985931771856[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="361">361. *</TD></TR>
+<TR><TD TOOLTIP="// 90% of collateral" HREF="bogus" ALIGN="LEFT" PORT="362">362. int 90</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="363">363. *</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="364">364. int 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="365">365. /</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="366">366. &lt;=</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="367">367. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="368">368. b configure_loan</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=37]139985931771856:368:s -> 139985931751536:370:n;
+139985931751536[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="370">370. configure_loan:</TD></TR>
+<TR><TD TOOLTIP="// new lamt change at pointer" HREF="bogus" ALIGN="LEFT" PORT="371">371. load 203</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="372">372. itob</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="373">373. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="374">374. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="375">375. byte &quot;lamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="376">376. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="377">377. bz new_loan_state</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=38]139985931751536:377:s -> 139985931751632:378:n;
+139985931751536:377:s -> 139985931751728:418:n;
+139985931751632[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="378">378. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="379">379. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="380">380. int 0</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="381">381. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="382">382. substring3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="383">383. cover 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="384">384. len</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="385">385. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="386">386. int 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="387">387. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="388">388. swap</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="389">389. substring3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="390">390. concat</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="391">391. concat</TD></TR>
+<TR><TD TOOLTIP="// updated lamt for local state" HREF="bogus" ALIGN="LEFT" PORT="392">392. store 213</TD></TR>
+<TR><TD TOOLTIP="// new camt change at pointer" HREF="bogus" ALIGN="LEFT" PORT="394">394. load 202</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="395">395. itob</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="396">396. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="397">397. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="398">398. byte &quot;camt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="399">399. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="400">400. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="401">401. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="402">402. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="403">403. int 0</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="404">404. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="405">405. substring3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="406">406. cover 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="407">407. len</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="408">408. load 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="409">409. int 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="410">410. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="411">411. swap</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="412">412. substring3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="413">413. concat</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="414">414. concat</TD></TR>
+<TR><TD TOOLTIP="// updated camt for local state" HREF="bogus" ALIGN="LEFT" PORT="415">415. store 212</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="416">416. b update_loan_state</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=39]139985931751632:416:s -> 139985931751824:475:n;
+139985931751728[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="418">418. new_loan_state:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="420">420. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="421">421. byte &quot;xids&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="422">422. load 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="423">423. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="424">424. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="425">425. byte &quot;xids&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="426">426. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="427">427. pop</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="428">428. concat</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="429">429. app_local_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="431">431. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="432">432. byte &quot;camt&quot;</TD></TR>
+<TR><TD TOOLTIP="// new camt" HREF="bogus" ALIGN="LEFT" PORT="433">433. load 202</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="434">434. itob</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="435">435. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="436">436. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="437">437. byte &quot;camt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="438">438. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="439">439. pop</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="440">440. itob</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="441">441. concat</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="442">442. app_local_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="444">444. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="445">445. byte &quot;lamt&quot;</TD></TR>
+<TR><TD TOOLTIP="// new lamt" HREF="bogus" ALIGN="LEFT" PORT="446">446. load 203</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="447">447. itob</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="448">448. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="449">449. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="450">450. byte &quot;lamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="451">451. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="452">452. pop</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="453">453. itob</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="454">454. concat</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="455">455. app_local_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="458">458. itxn_begin</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="459">459. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="460">460. itxn_field Fee</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="461">461. int afrz</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="462">462. itxn_field TypeEnum</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="463">463. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="464">464. itxn_field FreezeAssetAccount</TD></TR>
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="466">466. load 1</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="467">467. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="468">468. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="469">469. itxn_field FreezeAsset</TD></TR>
+<TR><TD TOOLTIP="//set frozen status to true" HREF="bogus" ALIGN="LEFT" PORT="470">470. int 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="471">471. itxn_field FreezeAssetFrozen</TD></TR>
+<TR><TD TOOLTIP="// this is an atomic inner transaction" HREF="bogus" ALIGN="LEFT" PORT="472">472. itxn_submit</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="473">473. b lenders_allow_collateral</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=40]139985931751728:473:s -> 139985931751920:506:n;
+139985931751824[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="475">475. update_loan_state:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="477">477. itxn_begin</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="478">478. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="479">479. itxn_field Fee</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="480">480. int afrz</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="481">481. itxn_field TypeEnum</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="482">482. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="483">483. itxn_field FreezeAssetAccount</TD></TR>
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="485">485. load 1</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="486">486. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="487">487. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="488">488. itxn_field FreezeAsset</TD></TR>
+<TR><TD TOOLTIP="//set frozen status to true" HREF="bogus" ALIGN="LEFT" PORT="489">489. int 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="490">490. itxn_field FreezeAssetFrozen</TD></TR>
+<TR><TD TOOLTIP="// this is an atomic inner transaction" HREF="bogus" ALIGN="LEFT" PORT="491">491. itxn_submit</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="494">494. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="495">495. byte &quot;lamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="496">496. load 213</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="497">497. app_local_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="500">500. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="501">501. byte &quot;camt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="502">502. load 212</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="503">503. app_local_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="504">504. b lenders_allow_collateral</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=41]139985931751824:504:s -> 139985931751920:506:n;
+139985931751920[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="506">506. lenders_allow_collateral:</TD></TR>
+<TR><TD TOOLTIP="// lender" HREF="bogus" ALIGN="LEFT" PORT="507">507. load 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="508">508. Gtxns Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="509">509. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="510">510. dup2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="511">511. byte &quot;xids&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="512">512. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="513">513. assert</TD></TR>
+<TR><TD TOOLTIP="// xids of lender" HREF="bogus" ALIGN="LEFT" PORT="514">514. store 6</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="515">515. byte &quot;aamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="516">516. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="517">517. assert</TD></TR>
+<TR><TD TOOLTIP="// aamt of lender" HREF="bogus" ALIGN="LEFT" PORT="518">518. store 7</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="519">519. callsub loop_allowed_asset</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=42]139985931751920:519:s -> 139985931752304:533:n;
+139985931752016[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="520">520. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="521">521. callsub update_liquidity</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=43]139985931752016:521:s -> 139985931752496:558:n;
+139985931752112[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="522">522. int 1</TD></TR>
+<TR><TD TOOLTIP="// lender" HREF="bogus" ALIGN="LEFT" PORT="523">523. load 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="524">524. +</TD></TR>
+<TR><TD TOOLTIP="// lender" HREF="bogus" ALIGN="LEFT" PORT="525">525. store 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="526">526. txn GroupIndex</TD></TR>
+<TR><TD TOOLTIP="// lender" HREF="bogus" ALIGN="LEFT" PORT="527">527. load 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="528">528. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="529">529. bz lenders_allow_collateral</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=44]139985931752112:529:s -> 139985931752208:530:n;
+139985931752112:529:s -> 139985931751920:506:n;
+139985931752208[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="530">530. int 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="531">531. return</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=45]139985931752304[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="533">533. loop_allowed_asset:</TD></TR>
+<TR><TD TOOLTIP="// temp lender pointer" HREF="bogus" ALIGN="LEFT" PORT="535">535. load 8</TD></TR>
+<TR><TD TOOLTIP="// xids of lender" HREF="bogus" ALIGN="LEFT" PORT="536">536. load 6</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="537">537. len</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="538">538. &lt;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="539">539. assert</TD></TR>
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="541">541. load 1</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="542">542. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="543">543. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="// xids (lender allowed assets)" HREF="bogus" ALIGN="LEFT" PORT="544">544. load 6</TD></TR>
+<TR><TD TOOLTIP="// temp lender pointer" HREF="bogus" ALIGN="LEFT" PORT="545">545. load 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="546">546. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="547">547. ==</TD></TR>
+<TR><TD TOOLTIP="// increment pointer" HREF="bogus" ALIGN="LEFT" PORT="548">548. int 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="549">549. load 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="550">550. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="551">551. store 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="552">552. bz loop_allowed_asset</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=46]139985931752304:552:s -> 139985931752400:553:n;
+139985931752304:552:s -> 139985931752304:533:n;
+139985931752400[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="553">553. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="554">554. store 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="555">555. int 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="556">556. retsub</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=47]139985931752400:556:s -> 139985931752016:520:n;
+139985931752496[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="558">558. update_liquidity:</TD></TR>
+<TR><TD TOOLTIP="// lender" HREF="bogus" ALIGN="LEFT" PORT="559">559. load 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="560">560. Gtxns Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="561">561. byte &quot;aamt&quot;</TD></TR>
+<TR><TD TOOLTIP="// lender" HREF="bogus" ALIGN="LEFT" PORT="563">563. load 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="564">564. Gtxns Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="565">565. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="566">566. byte &quot;aamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="567">567. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="568">568. assert</TD></TR>
+<TR><TD TOOLTIP="// lender" HREF="bogus" ALIGN="LEFT" PORT="569">569. load 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="570">570. Gtxns AssetAmount</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="571">571. -</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="573">573. app_local_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="576">576. itxn_begin</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="577">577. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="578">578. itxn_field Fee</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="579">579. int axfer</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="580">580. itxn_field TypeEnum</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="581">581. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="582">582. byte &quot;mng&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="583">583. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="584">584. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="585">585. byte &quot;dusd&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="586">586. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="// dusd" HREF="bogus" ALIGN="LEFT" PORT="587">587. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="588">588. itxn_field XferAsset</TD></TR>
+<TR><TD TOOLTIP="// lender" HREF="bogus" ALIGN="LEFT" PORT="589">589. load 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="590">590. Gtxns AssetAmount</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="591">591. dup</TD></TR>
+<TR><TD TOOLTIP="// 3% instant return" HREF="bogus" ALIGN="LEFT" PORT="592">592. int 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="593">593. *</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="594">594. int 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="595">595. /</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="596">596. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="597">597. itxn_field AssetAmount</TD></TR>
+<TR><TD TOOLTIP="// lender" HREF="bogus" ALIGN="LEFT" PORT="598">598. load 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="599">599. Gtxns Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="600">600. itxn_field AssetReceiver</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="601">601. itxn_submit</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="602">602. retsub</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=48]139985931752496:602:s -> 139985931752112:522:n;
+139985931752592[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="605">605. change_collateral_amount:</TD></TR>
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="606">606. txna ApplicationArgs 1</TD></TR>
+<TR><TD TOOLTIP="// camt" HREF="bogus" ALIGN="LEFT" PORT="607">607. txna ApplicationArgs 2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="608">608. dup2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="609">609. store 2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="610">610. store 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="612">612. len</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="613">613. swap</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="614">614. len</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="615">615. dup</TD></TR>
+<TR><TD TOOLTIP="// arg length" HREF="bogus" ALIGN="LEFT" PORT="616">616. store 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="617">617. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="618">618. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="619">619. b change_collateral</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=49]139985931752592:619:s -> 139985931752688:621:n;
+139985931752688[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="621">621. change_collateral:</TD></TR>
+<TR><TD TOOLTIP="// arg length" HREF="bogus" ALIGN="LEFT" PORT="622">622. load 0</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="623">623. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="624">624. &gt;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="625">625. bz end</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=50]139985931752688:625:s -> 139985931752784:626:n;
+139985931752688:625:s -> 139985931817552:1100:n;
+139985931752784[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="626">626. callsub verify_asset</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=51]139985931752784:626:s -> 139985931770512:181:n;
+139985931752880[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="627">627. assert</TD></TR>
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="628">628. load 1</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="629">629. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="630">630. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="631">631. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="632">632. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="633">633. byte &quot;xids&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="634">634. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="635">635. assert</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="636">636. load 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="637">637. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="638">638. ==</TD></TR>
+<TR><TD TOOLTIP="// increment pointer" HREF="bogus" ALIGN="LEFT" PORT="639">639. int 8</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="640">640. load 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="641">641. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="642">642. store 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="643">643. bz change_collateral</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=52]139985931752880:643:s -> 139985931752976:644:n;
+139985931752880:643:s -> 139985931752688:621:n;
+139985931752976[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="644">644. load 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="645">645. int 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="646">646. -</TD></TR>
+<TR><TD TOOLTIP="// adjust pointer" HREF="bogus" ALIGN="LEFT" PORT="647">647. store 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="648">648. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="649">649. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="650">650. byte &quot;lamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="651">651. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="652">652. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="653">653. load 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="654">654. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="// camt" HREF="bogus" ALIGN="LEFT" PORT="655">655. load 2</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="656">656. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="657">657. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="659">659. callsub oracle</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=53]139985931752976:659:s -> 139985931817360:1089:n;
+139985931753072[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="660">660. *</TD></TR>
+<TR><TD TOOLTIP="// 90% of collateral" HREF="bogus" ALIGN="LEFT" PORT="661">661. int 90</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="662">662. *</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="663">663. int 100</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="664">664. /</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="665">665. &lt;=</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="666">666. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="667">667. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="668">668. byte &quot;camt&quot;</TD></TR>
+<TR><TD TOOLTIP="// camt" HREF="bogus" ALIGN="LEFT" PORT="669">669. load 2</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="670">670. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="671">671. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="672">672. itob</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="673">673. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="674">674. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="675">675. byte &quot;camt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="676">676. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="677">677. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="678">678. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="679">679. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="680">680. int 0</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="681">681. load 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="682">682. substring3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="683">683. cover 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="684">684. len</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="685">685. load 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="686">686. int 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="687">687. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="688">688. swap</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="689">689. substring3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="690">690. concat</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="691">691. concat</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="692">692. app_local_put</TD></TR>
+<TR><TD TOOLTIP="// increment pointer" HREF="bogus" ALIGN="LEFT" PORT="693">693. int 8</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="694">694. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="695">695. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="696">696. store 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="697">697. b change_collateral</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=54]139985931753072:697:s -> 139985931752688:621:n;
+139985931753168[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="700">700. earn:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="701">701. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="702">702. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="703">703. dup2</TD></TR>
+<TR><TD TOOLTIP="// as allowed_assets" HREF="bogus" ALIGN="LEFT" PORT="704">704. byte &quot;xids&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="705">705. txna ApplicationArgs 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="706">706. callsub trim_length</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=55]139985931753168:706:s -> 139985931770128:161:n;
+139985931753264[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="707">707. app_local_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="708">708. byte &quot;aamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="709">709. txna ApplicationArgs 2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="710">710. btoi</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="711">711. app_local_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="712">712. byte &quot;lvr&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="713">713. txna ApplicationArgs 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="714">714. btoi</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="715">715. app_local_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="716">716. byte &quot;lsa&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="717">717. txna ApplicationArgs 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="718">718. callsub trim_length</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=56]139985931753264:718:s -> 139985931770128:161:n;
+139985931753360[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="719">719. app_local_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="720">720. int 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="721">721. return</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=57]139985931753456[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="724">724. create:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="725">725. byte &quot;mng&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="726">726. txna Applications 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="727">727. app_global_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="728">728. b creator_only</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=58]139985931753456:728:s -> 139985931817456:1094:n;
+139985931753552[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="731">731. manage:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="733">733. itxn_begin</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="734">734. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="735">735. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="736">736. itxn_field Fee</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="737">737. itxn_field AssetAmount</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="738">738. int axfer</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="739">739. itxn_field TypeEnum</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="740">740. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="741">741. byte &quot;mng&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="742">742. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="743">743. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="744">744. byte &quot;usdc&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="745">745. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="746">746. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="747">747. itxn_field XferAsset</TD></TR>
+<TR><TD TOOLTIP="// itxn sender" HREF="bogus" ALIGN="LEFT" PORT="748">748. global CurrentApplicationAddress</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="749">749. itxn_field AssetReceiver</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="750">750. itxn_submit</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="753">753. itxn_begin</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="754">754. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="755">755. itxn_field Fee</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="756">756. int axfer</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="757">757. itxn_field TypeEnum</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="758">758. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="759">759. itxn_field AssetAmount</TD></TR>
+<TR><TD TOOLTIP="// itxn sender" HREF="bogus" ALIGN="LEFT" PORT="760">760. global CurrentApplicationAddress</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="761">761. itxn_field AssetReceiver</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="762">762. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="763">763. byte &quot;mng&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="764">764. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="765">765. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="766">766. byte &quot;dusd&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="767">767. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="768">768. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="769">769. itxn_field XferAsset</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="770">770. itxn_submit</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="771">771. b creator_only</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=59]139985931753552:771:s -> 139985931817456:1094:n;
+139985931753648[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="774">774. handle_optin:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="775">775. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="776">776. byte &quot;xids&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="777">777. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="778">778. byte &quot;mng&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="779">779. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="780">780. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="781">781. byte &quot;dusd&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="782">782. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="783">783. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="784">784. itob</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="785">785. app_local_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="786">786. int 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="787">787. return</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=60]139985931753744[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="790">790. repay:</TD></TR>
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="791">791. txna ApplicationArgs 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="792">792. callsub trim_length</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=61]139985931753744:792:s -> 139985931770128:161:n;
+139985931753840[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="// ramt" HREF="bogus" ALIGN="LEFT" PORT="793">793. txna ApplicationArgs 2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="794">794. callsub trim_length</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=62]139985931753840:794:s -> 139985931770128:161:n;
+139985931753936[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="795">795. dup2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="796">796. store 2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="797">797. store 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="798">798. len</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="799">799. swap</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="800">800. len</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="801">801. dup</TD></TR>
+<TR><TD TOOLTIP="// arg length" HREF="bogus" ALIGN="LEFT" PORT="802">802. store 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="803">803. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="804">804. assert</TD></TR>
+<TR><TD TOOLTIP="// group index 0" HREF="bogus" ALIGN="LEFT" PORT="805">805. load 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="806">806. Gtxns AssetReceiver</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="807">807. global CurrentApplicationAddress</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="808">808. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="809">809. assert</TD></TR>
+<TR><TD TOOLTIP="// group index 0" HREF="bogus" ALIGN="LEFT" PORT="810">810. load 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="811">811. Gtxns XferAsset</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="812">812. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="813">813. byte &quot;mng&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="814">814. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="815">815. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="816">816. byte &quot;usdc&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="817">817. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="// USDCa" HREF="bogus" ALIGN="LEFT" PORT="818">818. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="819">819. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="820">820. assert</TD></TR>
+<TR><TD TOOLTIP="// group index 0" HREF="bogus" ALIGN="LEFT" PORT="821">821. load 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="822">822. Gtxns AssetAmount</TD></TR>
+<TR><TD TOOLTIP="// repay amount" HREF="bogus" ALIGN="LEFT" PORT="823">823. store 10</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="824">824. b identify_repay</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=63]139985931753936:824:s -> 139985931754032:826:n;
+139985931754032[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="826">826. identify_repay:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="827">827. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="828">828. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="829">829. byte &quot;xids&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="830">830. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="831">831. assert</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="832">832. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="833">833. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="834">834. load 1</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="835">835. load 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="836">836. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="837">837. ==</TD></TR>
+<TR><TD TOOLTIP="// increment pointer" HREF="bogus" ALIGN="LEFT" PORT="838">838. int 8</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="839">839. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="840">840. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="841">841. store 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="842">842. bz identify_repay</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=64]139985931754032:842:s -> 139985931754128:843:n;
+139985931754032:842:s -> 139985931754032:826:n;
+139985931754128[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="843">843. load 4</TD></TR>
+<TR><TD TOOLTIP="// adjust pointer" HREF="bogus" ALIGN="LEFT" PORT="844">844. int 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="845">845. -</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="846">846. store 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="847">847. b repaid</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=65]139985931754128:847:s -> 139985931754224:849:n;
+139985931754224[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="849">849. repaid:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="850">850. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="851">851. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="852">852. byte &quot;lamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="853">853. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="854">854. assert</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="855">855. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="856">856. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="// ramt" HREF="bogus" ALIGN="LEFT" PORT="857">857. load 2</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="858">858. load 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="859">859. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="862">862. dup</TD></TR>
+<TR><TD TOOLTIP="// repay amount" HREF="bogus" ALIGN="LEFT" PORT="863">863. load 10</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="864">864. swap</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="866">866. -</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="867">867. store 10</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="869">869. dup2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="870">870. &lt;=</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="871">871. bnz unfreeze_repaid</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=66]139985931754224:871:s -> 139985931754320:872:n;
+139985931754224:871:s -> 139985931754416:877:n;
+139985931754320[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="872">872. -</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="873">873. itob</TD></TR>
+<TR><TD TOOLTIP="// new_lamt" HREF="bogus" ALIGN="LEFT" PORT="874">874. store 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="875">875. b configure_loan_state</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=67]139985931754320:875:s -> 139985931754512:899:n;
+139985931754416[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="877">877. unfreeze_repaid:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="879">879. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="880">880. itob</TD></TR>
+<TR><TD TOOLTIP="// new_lamt (0)" HREF="bogus" ALIGN="LEFT" PORT="881">881. store 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="883">883. itxn_begin</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="884">884. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="885">885. itxn_field Fee</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="886">886. int afrz</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="887">887. itxn_field TypeEnum</TD></TR>
+<TR><TD TOOLTIP="// xids" HREF="bogus" ALIGN="LEFT" PORT="888">888. load 1</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="889">889. load 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="890">890. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="891">891. itxn_field FreezeAsset</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="892">892. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="893">893. itxn_field FreezeAssetAccount</TD></TR>
+<TR><TD TOOLTIP="// unfreeze" HREF="bogus" ALIGN="LEFT" PORT="894">894. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="895">895. itxn_field FreezeAssetFrozen</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="896">896. itxn_submit</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="897">897. b configure_loan_state</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=68]139985931754416:897:s -> 139985931754512:899:n;
+139985931754512[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="899">899. configure_loan_state:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="900">900. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="901">901. byte &quot;lamt&quot;</TD></TR>
+<TR><TD TOOLTIP="// new_lamt" HREF="bogus" ALIGN="LEFT" PORT="902">902. load 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="903">903. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="904">904. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="905">905. byte &quot;lamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="906">906. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="907">907. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="908">908. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="909">909. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="910">910. int 0</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="911">911. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="912">912. substring3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="913">913. cover 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="914">914. len</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="915">915. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="916">916. int 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="917">917. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="918">918. swap</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="919">919. substring3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="920">920. concat</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="921">921. concat</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="922">922. app_local_put</TD></TR>
+<TR><TD TOOLTIP="// reset pointer" HREF="bogus" ALIGN="LEFT" PORT="924">924. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="925">925. store 4</TD></TR>
+<TR><TD TOOLTIP="// arg length" HREF="bogus" ALIGN="LEFT" PORT="926">926. load 0</TD></TR>
+<TR><TD TOOLTIP="// temp pointer" HREF="bogus" ALIGN="LEFT" PORT="927">927. load 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="928">928. int 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="929">929. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="930">930. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="931">931. store 8</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="932">932. &gt;</TD></TR>
+<TR><TD TOOLTIP="// repay amount" HREF="bogus" ALIGN="LEFT" PORT="933">933. load 10</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="934">934. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="935">935. &gt;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="936">936. &amp;&amp;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="937">937. bnz repaid</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=69]139985931754512:937:s -> 139985931754608:938:n;
+139985931754512:937:s -> 139985931754224:849:n;
+139985931754608[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="938">938. int 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="939">939. return</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=70]139985931754704[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="942">942. claim:</TD></TR>
+<TR><TD TOOLTIP="// group index 0" HREF="bogus" ALIGN="LEFT" PORT="943">943. load 5</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="944">944. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="945">945. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="946">946. Gtxns AssetReceiver</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="947">947. global CurrentApplicationAddress</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="948">948. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="949">949. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="950">950. Gtxns XferAsset</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="951">951. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="952">952. byte &quot;mng&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="953">953. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="954">954. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="955">955. byte &quot;dusd&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="956">956. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="// dusd" HREF="bogus" ALIGN="LEFT" PORT="957">957. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="958">958. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="959">959. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="961">961. itxn_begin</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="962">962. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="963">963. itxn_field Fee</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="964">964. int axfer</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="965">965. itxn_field TypeEnum</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="966">966. Gtxns AssetAmount</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="967">967. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="968">968. itxn_field AssetAmount</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="969">969. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="970">970. byte &quot;mng&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="971">971. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="972">972. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="973">973. byte &quot;usdc&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="974">974. app_global_get_ex</TD></TR>
+<TR><TD TOOLTIP="// USDCa" HREF="bogus" ALIGN="LEFT" PORT="975">975. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="976">976. itxn_field XferAsset</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="977">977. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="978">978. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="979">979. itxn_field AssetReceiver</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="980">980. itxn_submit</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="982">982. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="983">983. byte &quot;aamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="984">984. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="985">985. bnz reset_loan_amount</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=71]139985931754704:985:s -> 139985931754800:986:n;
+139985931754704:985:s -> 139985931754896:989:n;
+139985931754800[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="986">986. int 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="987">987. return</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=72]139985931754896[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="989">989. reset_loan_amount:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="990">990. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="991">991. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="992">992. byte &quot;aamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="993">993. uncover 2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="994">994. app_local_put</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="995">995. int 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="996">996. return</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=73]139985931754992[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="999">999. handle_closeout:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1000">1000. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1001">1001. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1002">1002. dup2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1003">1003. byte &quot;camt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1004">1004. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1005">1005. bz closeout_app</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=74]139985931754992:1005:s -> 139985931755088:1006:n;
+139985931754992:1005:s -> 139985931817264:1068:n;
+139985931755088[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1006">1006. pop</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1007">1007. byte &quot;lamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1008">1008. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1009">1009. bz closeout_app</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=75]139985931755088:1009:s -> 139985931755184:1010:n;
+139985931755088:1009:s -> 139985931817264:1068:n;
+139985931755184[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="// lamt" HREF="bogus" ALIGN="LEFT" PORT="1010">1010. store 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1011">1011. b check_no_loan</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=76]139985931755184:1011:s -> 139985931755280:1013:n;
+139985931755280[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1013">1013. check_no_loan:</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="1014">1014. load 4</TD></TR>
+<TR><TD TOOLTIP="// lamt" HREF="bogus" ALIGN="LEFT" PORT="1015">1015. load 3</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1016">1016. len</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1017">1017. &gt;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1018">1018. bnz closeout_app</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=77]139985931755280:1018:s -> 139985931755376:1019:n;
+139985931755280:1018:s -> 139985931817264:1068:n;
+139985931755376[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="// lamt" HREF="bogus" ALIGN="LEFT" PORT="1019">1019. load 3</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="1020">1020. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1021">1021. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1022">1022. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1023">1023. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1024">1024. bnz unfreeze_asset</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=78]139985931755376:1024:s -> 139985931755472:1026:n;
+139985931755376:1024:s -> 139985931817072:1028:n;
+139985931755472[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1026">1026. err</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=79]139985931817072[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1028">1028. unfreeze_asset:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1029">1029. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1030">1030. global CurrentApplicationID</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1031">1031. byte &quot;xids&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1032">1032. app_local_get_ex</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1033">1033. assert</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="1034">1034. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1035">1035. extract_uint64</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1036">1036. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1037">1037. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1038">1038. asset_params_get AssetFreeze</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1039">1039. assert</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1040">1040. global CurrentApplicationAddress</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1041">1041. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1042">1042. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1043">1043. uncover 2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1044">1044. asset_holding_get AssetFrozen</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1045">1045. int 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1046">1046. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1047">1047. &amp;&amp;</TD></TR>
+<TR><TD TOOLTIP="// increment pointer" HREF="bogus" ALIGN="LEFT" PORT="1048">1048. int 8</TD></TR>
+<TR><TD TOOLTIP="// pointer" HREF="bogus" ALIGN="LEFT" PORT="1049">1049. load 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1050">1050. +</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1051">1051. store 4</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1052">1052. bz check_no_loan</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=80]139985931817072:1052:s -> 139985931817168:1054:n;
+139985931817072:1052:s -> 139985931755280:1013:n;
+139985931817168[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1054">1054. itxn_begin</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1055">1055. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1056">1056. itxn_field Fee</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1057">1057. int afrz</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1058">1058. itxn_field TypeEnum</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1060">1060. itxn_field FreezeAsset</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1061">1061. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1062">1062. itxn_field FreezeAssetAccount</TD></TR>
+<TR><TD TOOLTIP="//set frozen status to false" HREF="bogus" ALIGN="LEFT" PORT="1063">1063. int 0</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1064">1064. itxn_field FreezeAssetFrozen</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1065">1065. itxn_submit</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1066">1066. b check_no_loan</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=81]139985931817168:1066:s -> 139985931755280:1013:n;
+139985931817264[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1068">1068. closeout_app:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1069">1069. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1070">1070. dup</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1071">1071. dup2</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1072">1072. dup2</TD></TR>
+<TR><TD TOOLTIP="// participation assets" HREF="bogus" ALIGN="LEFT" PORT="1073">1073. byte &quot;xids&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1074">1074. app_local_del</TD></TR>
+<TR><TD TOOLTIP="// allowed borrow amount" HREF="bogus" ALIGN="LEFT" PORT="1075">1075. byte &quot;aamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1076">1076. app_local_del</TD></TR>
+<TR><TD TOOLTIP="// collateral amount" HREF="bogus" ALIGN="LEFT" PORT="1077">1077. byte &quot;camt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1078">1078. app_local_del</TD></TR>
+<TR><TD TOOLTIP="// loan amount" HREF="bogus" ALIGN="LEFT" PORT="1079">1079. byte &quot;lamt&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1080">1080. app_local_del</TD></TR>
+<TR><TD TOOLTIP="// last valid round of lending offer" HREF="bogus" ALIGN="LEFT" PORT="1081">1081. byte &quot;lvr&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1082">1082. app_local_del</TD></TR>
+<TR><TD TOOLTIP="// hash identifier of logic sig account" HREF="bogus" ALIGN="LEFT" PORT="1083">1083. byte &quot;lsa&quot;</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1084">1084. app_local_del</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1085">1085. int 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1086">1086. return</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=82]139985931817360[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1089">1089. oracle:</TD></TR>
+<TR><TD TOOLTIP="// oracle price" HREF="bogus" ALIGN="LEFT" PORT="1090">1090. int 50000000</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1091">1091. retsub</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=83]139985931817360:1091:s -> 139985931771856:361:n;
+139985931817360:1091:s -> 139985931753072:660:n;
+139985931817456[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1094">1094. creator_only:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1095">1095. global CreatorAddress</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1096">1096. txn Sender</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1097">1097. ==</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1098">1098. return</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=84]139985931817552[label=<<TABLE ALIGN="LEFT">
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1100">1100. end:</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1101">1101. int 1</TD></TR>
+<TR><TD TOOLTIP="no comment for this line" HREF="bogus" ALIGN="LEFT" PORT="1102">1102. return</TD></TR>
+</TABLE>> labelloc=top shape=plain
+ xlabel=85]}

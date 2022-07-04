@@ -1,0 +1,925 @@
+	#pragma version 6
+	txn OnCompletion
+	int 0
+	==
+	bnz label1
+	txn OnCompletion
+	int 1
+	==
+	bnz label2
+	txn OnCompletion
+	intc 6 
+	==
+	bnz label3
+	txn OnCompletion
+	int 4
+	==
+	bnz label4
+	txn OnCompletion
+	intc 4 
+	==
+	bnz label4
+	err
+label1:
+	txna ApplicationArgs 0
+	pushbytes 0x95a72747 
+	==
+	bnz label5
+	txna ApplicationArgs 0
+	pushbytes 0x346d2be6 
+	==
+	bnz label6
+	txna ApplicationArgs 0
+	pushbytes 0xbdbbbaca 
+	==
+	bnz label7
+	txna ApplicationArgs 0
+	pushbytes 0x38b98988 
+	==
+	bnz label8
+	txna ApplicationArgs 0
+	pushbytes 0x7e6be300 
+	==
+	bnz label9
+	txna ApplicationArgs 0
+	pushbytes 0x2178a540 
+	==
+	bnz label10
+	txna ApplicationArgs 0
+	pushbytes 0xe95cff4c 
+	==
+	bnz label11
+	err
+label5:
+	txna ApplicationArgs 1
+	callsub label12
+	txna ApplicationArgs 2
+	callsub label12
+	txna ApplicationArgs 3
+	callsub label12
+	store 3
+	store 2
+	dup
+	len
+	store 0
+	store 1
+	load 0
+	dup
+	load 2
+	len
+	==
+	assert
+	load 3
+	len
+	==
+	bnz label13
+	err
+label12:
+	dup
+	len
+	intc 6 
+	swap
+	substring3
+	retsub
+label13:
+	load 3
+	load 4
+	extract_uint64
+	int 0
+	>
+	assert
+	callsub label14
+	bnz label15
+	err
+label14:
+	load 1
+	load 4
+	extract_uint64
+	dup
+	dup
+	asset_params_get AssetManager
+	assert
+	dup
+	global ZeroAddress
+	==
+	swap
+	global CurrentApplicationID
+	byte base64 bW5n
+	app_global_get_ex
+	assert
+	app_params_get AppAddress
+	assert
+	==
+	||
+	assert
+	asset_params_get AssetFreeze
+	assert
+	global CurrentApplicationAddress
+	==
+	assert
+	asset_params_get AssetClawback
+	assert
+	global CurrentApplicationID
+	byte base64 bW5n
+	app_global_get_ex
+	assert
+	pushbytes 0x6c7174 
+	app_global_get_ex
+	assert
+	app_params_get AppAddress
+	assert
+	==
+	callsub label16
+	&&
+	retsub
+label16:
+	txn Sender
+	load 1
+	load 4
+	extract_uint64
+	asset_holding_get AssetBalance
+	assert
+	load 2
+	load 4
+	extract_uint64
+	callsub label17
+	+
+	>=
+	retsub
+label17:
+	txn Sender
+	global CurrentApplicationID
+	byte base64 eGlkcw==
+	app_local_get_ex
+	assert
+	dup
+	dup
+	store 99
+	len
+	load 100
+	>
+	bz label18
+	load 100
+	extract_uint64
+	load 1
+	load 4
+	extract_uint64
+	==
+	int 8
+	load 100
+	+
+	store 100
+	bz label17
+	load 100
+	int 8
+	-
+	store 100
+	txn Sender
+	global CurrentApplicationID
+	byte base64 Y2FtdA==
+	app_local_get_ex
+	assert
+	load 100
+	extract_uint64
+	retsub
+label18:
+	pop
+	int 0
+	dup
+	store 100
+	retsub
+label15:
+	load 100
+	bz label19
+	b label20
+label20:
+	load 100
+	load 99
+	len
+	<
+	bz label19
+	load 1
+	load 4
+	extract_uint64
+	load 99
+	load 100
+	extract_uint64
+	==
+	load 100
+	int 8
+	+
+	store 100
+	bz label20
+	load 100
+	int 8
+	-
+	store 100
+	txn Sender
+	global CurrentApplicationID
+	byte base64 bGFtdA==
+	app_local_get_ex
+	assert
+	load 100
+	extract_uint64
+	store 103
+	txn Sender
+	global CurrentApplicationID
+	byte base64 Y2FtdA==
+	app_local_get_ex
+	assert
+	load 100
+	extract_uint64
+	store 102
+	b label19
+label19:
+	load 103
+	load 3
+	load 4
+	extract_uint64
+	dup
+	intc 7 
+	*
+	intc 5 
+	/
+	+
+	+
+	dup
+	store 203
+	load 102
+	load 2
+	load 4
+	extract_uint64
+	+
+	dup
+	store 202
+	callsub label21
+	*
+	intc 8 
+	*
+	intc 5 
+	/
+	<=
+	assert
+	b label22
+label22:
+	load 203
+	itob
+	txn Sender
+	global CurrentApplicationID
+	byte base64 bGFtdA==
+	app_local_get_ex
+	bz label23
+	dup
+	dup
+	int 0
+	load 100
+	substring3
+	cover 3
+	len
+	load 100
+	int 8
+	+
+	swap
+	substring3
+	concat
+	concat
+	store 213
+	load 202
+	itob
+	txn Sender
+	global CurrentApplicationID
+	byte base64 Y2FtdA==
+	app_local_get_ex
+	assert
+	dup
+	dup
+	int 0
+	load 100
+	substring3
+	cover 3
+	len
+	load 100
+	int 8
+	+
+	swap
+	substring3
+	concat
+	concat
+	store 212
+	b label24
+label23:
+	txn Sender
+	byte base64 eGlkcw==
+	load 1
+	txn Sender
+	global CurrentApplicationID
+	byte base64 eGlkcw==
+	app_local_get_ex
+	pop
+	concat
+	app_local_put
+	txn Sender
+	byte base64 Y2FtdA==
+	load 202
+	itob
+	txn Sender
+	global CurrentApplicationID
+	byte base64 Y2FtdA==
+	app_local_get_ex
+	pop
+	itob
+	concat
+	app_local_put
+	txn Sender
+	byte base64 bGFtdA==
+	load 203
+	itob
+	txn Sender
+	global CurrentApplicationID
+	byte base64 bGFtdA==
+	app_local_get_ex
+	pop
+	itob
+	concat
+	app_local_put
+	itxn_begin
+	int 0
+	itxn_field Fee
+	intc 4 
+	itxn_field TypeEnum
+	txn Sender
+	itxn_field FreezeAssetAccount
+	load 1
+	load 4
+	extract_uint64
+	itxn_field FreezeAsset
+	int 1
+	itxn_field FreezeAssetFrozen
+	itxn_submit
+	b label25
+label24:
+	itxn_begin
+	int 0
+	itxn_field Fee
+	intc 4 
+	itxn_field TypeEnum
+	txn Sender
+	itxn_field FreezeAssetAccount
+	load 1
+	load 4
+	extract_uint64
+	itxn_field FreezeAsset
+	int 1
+	itxn_field FreezeAssetFrozen
+	itxn_submit
+	txn Sender
+	byte base64 bGFtdA==
+	load 213
+	app_local_put
+	txn Sender
+	byte base64 Y2FtdA==
+	load 212
+	app_local_put
+	b label25
+label25:
+	load 5
+	gtxns Sender
+	global CurrentApplicationID
+	dup2
+	byte base64 eGlkcw==
+	app_local_get_ex
+	assert
+	store 6
+	bytec 4 
+	app_local_get_ex
+	assert
+	store 7
+	callsub label26
+	assert
+	callsub label27
+	int 1
+	load 5
+	+
+	store 5
+	txn GroupIndex
+	load 5
+	==
+	bz label25
+	int 1
+	return
+label26:
+	load 8
+	load 6
+	len
+	<
+	assert
+	load 1
+	load 4
+	extract_uint64
+	load 6
+	load 8
+	extract_uint64
+	==
+	int 8
+	load 8
+	+
+	store 8
+	bz label26
+	int 0
+	store 8
+	int 1
+	retsub
+label27:
+	load 5
+	gtxns Sender
+	bytec 4 
+	load 5
+	gtxns Sender
+	global CurrentApplicationID
+	bytec 4 
+	app_local_get_ex
+	assert
+	load 5
+	gtxns AssetAmount
+	-
+	app_local_put
+	itxn_begin
+	int 0
+	itxn_field Fee
+	int 4
+	itxn_field TypeEnum
+	global CurrentApplicationID
+	byte base64 bW5n
+	app_global_get_ex
+	assert
+	bytec 5 
+	app_global_get_ex
+	assert
+	itxn_field XferAsset
+	load 5
+	gtxns AssetAmount
+	dup
+	intc 7 
+	*
+	intc 5 
+	/
+	+
+	itxn_field AssetAmount
+	load 5
+	gtxns Sender
+	itxn_field AssetReceiver
+	itxn_submit
+	retsub
+label6:
+	txna ApplicationArgs 1
+	txna ApplicationArgs 2
+	dup2
+	store 2
+	store 1
+	len
+	swap
+	len
+	dup
+	store 0
+	==
+	assert
+	b label28
+label28:
+	load 0
+	load 4
+	>
+	bz label29
+	callsub label14
+	assert
+	load 1
+	load 4
+	extract_uint64
+	txn Sender
+	global CurrentApplicationID
+	byte base64 eGlkcw==
+	app_local_get_ex
+	assert
+	load 8
+	extract_uint64
+	==
+	int 8
+	load 8
+	+
+	store 8
+	bz label28
+	load 8
+	int 8
+	-
+	store 8
+	txn Sender
+	global CurrentApplicationID
+	byte base64 bGFtdA==
+	app_local_get_ex
+	assert
+	load 8
+	extract_uint64
+	load 2
+	load 4
+	extract_uint64
+	callsub label21
+	*
+	intc 8 
+	*
+	intc 5 
+	/
+	<=
+	assert
+	txn Sender
+	byte base64 Y2FtdA==
+	load 2
+	load 4
+	extract_uint64
+	itob
+	txn Sender
+	global CurrentApplicationID
+	byte base64 Y2FtdA==
+	app_local_get_ex
+	assert
+	dup
+	dup
+	int 0
+	load 8
+	substring3
+	cover 3
+	len
+	load 8
+	int 8
+	+
+	swap
+	substring3
+	concat
+	concat
+	app_local_put
+	int 8
+	load 4
+	+
+	store 4
+	b label28
+label7:
+	txn Sender
+	dup
+	dup2
+	byte base64 eGlkcw==
+	txna ApplicationArgs 1
+	callsub label12
+	app_local_put
+	bytec 4 
+	txna ApplicationArgs 2
+	btoi
+	app_local_put
+	bytec 7 
+	txna ApplicationArgs 3
+	btoi
+	app_local_put
+	bytec 8 
+	txna ApplicationArgs 4
+	callsub label12
+	app_local_put
+	int 1
+	return
+label10:
+	byte base64 bW5n
+	txna Applications 1
+	app_global_put
+	b label4
+label11:
+	itxn_begin
+	int 0
+	dup
+	itxn_field Fee
+	itxn_field AssetAmount
+	int 4
+	itxn_field TypeEnum
+	global CurrentApplicationID
+	byte base64 bW5n
+	app_global_get_ex
+	assert
+	bytec 6 
+	app_global_get_ex
+	assert
+	itxn_field XferAsset
+	global CurrentApplicationAddress
+	itxn_field AssetReceiver
+	itxn_submit
+	itxn_begin
+	int 0
+	itxn_field Fee
+	int 4
+	itxn_field TypeEnum
+	int 0
+	itxn_field AssetAmount
+	global CurrentApplicationAddress
+	itxn_field AssetReceiver
+	global CurrentApplicationID
+	byte base64 bW5n
+	app_global_get_ex
+	assert
+	bytec 5 
+	app_global_get_ex
+	assert
+	itxn_field XferAsset
+	itxn_submit
+	b label4
+label2:
+	txn Sender
+	byte base64 eGlkcw==
+	global CurrentApplicationID
+	byte base64 bW5n
+	app_global_get_ex
+	assert
+	bytec 5 
+	app_global_get_ex
+	assert
+	itob
+	app_local_put
+	int 1
+	return
+label8:
+	txna ApplicationArgs 1
+	callsub label12
+	txna ApplicationArgs 2
+	callsub label12
+	dup2
+	store 2
+	store 1
+	len
+	swap
+	len
+	dup
+	store 0
+	==
+	assert
+	load 5
+	gtxns AssetReceiver
+	global CurrentApplicationAddress
+	==
+	assert
+	load 5
+	gtxns XferAsset
+	global CurrentApplicationID
+	byte base64 bW5n
+	app_global_get_ex
+	assert
+	bytec 6 
+	app_global_get_ex
+	assert
+	==
+	assert
+	load 5
+	gtxns AssetAmount
+	store 10
+	b label30
+label30:
+	txn Sender
+	global CurrentApplicationID
+	byte base64 eGlkcw==
+	app_local_get_ex
+	assert
+	load 4
+	extract_uint64
+	load 1
+	load 8
+	extract_uint64
+	==
+	int 8
+	load 4
+	+
+	store 4
+	bz label30
+	load 4
+	int 8
+	-
+	store 4
+	b label31
+label31:
+	txn Sender
+	global CurrentApplicationID
+	byte base64 bGFtdA==
+	app_local_get_ex
+	assert
+	load 4
+	extract_uint64
+	load 2
+	load 8
+	extract_uint64
+	dup
+	load 10
+	swap
+	-
+	store 10
+	dup2
+	<=
+	bnz label32
+	-
+	itob
+	store 3
+	b label33
+label32:
+	int 0
+	itob
+	store 3
+	itxn_begin
+	int 0
+	itxn_field Fee
+	intc 4 
+	itxn_field TypeEnum
+	load 1
+	load 8
+	extract_uint64
+	itxn_field FreezeAsset
+	txn Sender
+	itxn_field FreezeAssetAccount
+	int 0
+	itxn_field FreezeAssetFrozen
+	itxn_submit
+	b label33
+label33:
+	txn Sender
+	byte base64 bGFtdA==
+	load 3
+	txn Sender
+	global CurrentApplicationID
+	byte base64 bGFtdA==
+	app_local_get_ex
+	assert
+	dup
+	dup
+	int 0
+	load 4
+	substring3
+	cover 3
+	len
+	load 4
+	int 8
+	+
+	swap
+	substring3
+	concat
+	concat
+	app_local_put
+	int 0
+	store 4
+	load 0
+	load 8
+	int 8
+	+
+	dup
+	store 8
+	>
+	load 10
+	int 0
+	>
+	&&
+	bnz label31
+	int 1
+	return
+label9:
+	load 5
+	dup
+	dup
+	gtxns AssetReceiver
+	global CurrentApplicationAddress
+	==
+	assert
+	gtxns XferAsset
+	global CurrentApplicationID
+	byte base64 bW5n
+	app_global_get_ex
+	assert
+	bytec 5 
+	app_global_get_ex
+	assert
+	==
+	assert
+	itxn_begin
+	int 0
+	itxn_field Fee
+	int 4
+	itxn_field TypeEnum
+	gtxns AssetAmount
+	dup
+	itxn_field AssetAmount
+	global CurrentApplicationID
+	byte base64 bW5n
+	app_global_get_ex
+	assert
+	bytec 6 
+	app_global_get_ex
+	assert
+	itxn_field XferAsset
+	txn Sender
+	dup
+	itxn_field AssetReceiver
+	itxn_submit
+	global CurrentApplicationID
+	bytec 4 
+	app_local_get_ex
+	bnz label34
+	int 1
+	return
+label34:
+	+
+	txn Sender
+	bytec 4 
+	uncover 2
+	app_local_put
+	int 1
+	return
+label3:
+	txn Sender
+	global CurrentApplicationID
+	dup2
+	byte base64 Y2FtdA==
+	app_local_get_ex
+	bz label35
+	pop
+	byte base64 bGFtdA==
+	app_local_get_ex
+	bz label35
+	store 3
+	b label36
+label36:
+	load 4
+	load 3
+	len
+	>
+	bnz label35
+	load 3
+	load 4
+	extract_uint64
+	int 0
+	==
+	bnz label37
+	err
+label37:
+	txn Sender
+	global CurrentApplicationID
+	byte base64 eGlkcw==
+	app_local_get_ex
+	assert
+	load 4
+	extract_uint64
+	dup
+	dup
+	asset_params_get AssetFreeze
+	assert
+	global CurrentApplicationAddress
+	==
+	txn Sender
+	uncover 2
+	asset_holding_get AssetFrozen
+	int 1
+	==
+	&&
+	int 8
+	load 4
+	+
+	store 4
+	bz label36
+	itxn_begin
+	int 0
+	itxn_field Fee
+	intc 4 
+	itxn_field TypeEnum
+	itxn_field FreezeAsset
+	txn Sender
+	itxn_field FreezeAssetAccount
+	int 0
+	itxn_field FreezeAssetFrozen
+	itxn_submit
+	b label36
+label35:
+	txn Sender
+	dup
+	dup2
+	dup2
+	byte base64 eGlkcw==
+	app_local_del
+	bytec 4 
+	app_local_del
+	byte base64 Y2FtdA==
+	app_local_del
+	byte base64 bGFtdA==
+	app_local_del
+	bytec 7 
+	app_local_del
+	bytec 8 
+	app_local_del
+	int 1
+	return
+label21:
+	pushint 50000000
+	retsub
+label4:
+	global CreatorAddress
+	txn Sender
+	==
+	return
+label29:
+	int 1
+	return

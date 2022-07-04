@@ -16,7 +16,7 @@ func TestFetchLsigFromFile(t *testing.T) {
 }
 
 func TestDispenseAssetDUSD(t *testing.T) {
-	algodClient, err := InitAlgodClient(AlgodAddressSandbox, AlgodTokenSandbox, "local")
+	algodClient, err := InitAlgodClient()
 	if err != nil {
 		t.Errorf("algodClient found error, %s", err)
 	}
@@ -27,7 +27,7 @@ func TestDispenseAssetDUSD(t *testing.T) {
 }
 
 func TestDispenseAsset(t *testing.T) {
-	algodClient, err := InitAlgodClient(AlgodAddressSandbox, AlgodTokenSandbox, "local")
+	algodClient, err := InitAlgodClient()
 	if err != nil {
 		t.Errorf("algodClient found error, %s", err)
 	}

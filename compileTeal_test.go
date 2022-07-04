@@ -11,7 +11,7 @@ import (
 )
 
 func TestCompileToLsig(t *testing.T) {
-	algodClient, err := InitAlgodClient(AlgodAddressSandbox, AlgodTokenSandbox, "local")
+	algodClient, err := InitAlgodClient()
 	if err != nil {
 		t.Errorf("algodClient found error, %s", err)
 	}
@@ -45,7 +45,7 @@ func TestCompileToLsig(t *testing.T) {
 }
 
 func TestCompileToLsigDispenser(t *testing.T) {
-	algodClient, err := InitAlgodClient(AlgodAddressSandbox, AlgodTokenSandbox, "local")
+	algodClient, err := InitAlgodClient()
 	if err != nil {
 		t.Errorf("algodClient found error, %s", err)
 	}
