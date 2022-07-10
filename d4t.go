@@ -321,7 +321,11 @@ func Borrow(algodClient *algod.Client, acct crypto.Account, lender types.Address
 	}
 	signerLsa := future.LogicSigAccountTransactionSigner{LogicSigAccount: lsa}
 	stxn := future.TransactionWithSigner{Txn: txn, Signer: signerLsa}
-	err = atc.AddMethodCall(combine(mcp, getMethod(contract, "borrow"), []interface{}{stxn, xids, camt, lamt, lender, xids[0], jusd, mng, lqt}))
+	err = atc.AddTransaction(stxn)
+	if err != nil {
+		log.Fatalf("Failed to AddTransaction: %+v", err)
+	}
+	err = atc.AddMethodCall(combine(mcp, getMethod(contract, "borrow"), []interface{}{xids[0], camt[0], lamt[0], lender, xids[0], jusd, mng, lqt}))
 	if err != nil {
 		log.Fatalf("Failed to AddMethodCall: %+v", err)
 	}

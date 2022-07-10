@@ -3,7 +3,7 @@
 
 ## DeFi4NFT
 
-[![d4t logo](/docs/assets/images/logo_black.png)](https://youtu.be/4n19YhPuku4 "DeFi 4 NFT demo video")
+[![d4t logo](/docs/assets/images/logo.gif)](https://youtu.be/4n19YhPuku4 "DeFi 4 NFT demo video")
 
 DeFi4NFT dapp is an NFT collateralizing app on Algorand. Which let's you use any NFT you hold in Algorand as leverage for borrowing stable coin in DeFi4NFT.
 Leveraged NFT remains locked in your (*borrower*) address until the full loan amount is repaid, which is a **pure non-custodial** transaction.
@@ -18,7 +18,9 @@ Liquidity providers will keep their liquidity asset in their account until a bor
 
 [Live Demo](https://defi4nft.vercel.io)
 
-[Medium article](https://defi4nft.readthedocs.io/en/latest)
+[Medium article](https://medium.com/p/b99ac17d20ce)
+
+Neos world -> Algorand
 
 # Contact
 

@@ -81,7 +81,7 @@ handle_noop:
 	// Handle borrowing
 	// (xids, camt, lamt,[lenders],[xids,dusd],[mng,lqt])
 	txna ApplicationArgs 0
-	method "borrow(uint64[],uint64[],uint64[],account,asset,asset,application,application)void"
+	method "borrow(uint64,uint64,uint64,account,asset,asset,application,application)void"
 	==
 	bnz borrow
 
@@ -133,11 +133,11 @@ handle_noop:
 // Handle borrowing
 borrow:
 	txna ApplicationArgs 1 // xids
-	callsub trim_length
+	//callsub trim_length
 	txna ApplicationArgs 2 // camt
-	callsub trim_length
+	//callsub trim_length
 	txna ApplicationArgs 3 // lamt
-	callsub trim_length
+	//callsub trim_length
 	store 3
 	store 2
 	dup

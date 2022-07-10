@@ -175,20 +175,16 @@
             "desc": "borrow against your NFTs by locking them in your account",
             "args": [
                 {
-                    "name": "usdc",
-                    "type": "axfer"
-                },
-                {
                     "name": "xids",
-                    "type": "uint64[]"
+                    "type": "uint64"
                 },
                 {
                     "name": "camt",
-                    "type": "uint64[]"
+                    "type": "uint64"
                 },
                 {
                     "name": "lamt",
-                    "type": "uint64[]"
+                    "type": "uint64"
                 },
                 {
                     "name": "lenders",
