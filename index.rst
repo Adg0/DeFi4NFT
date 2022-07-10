@@ -3,28 +3,18 @@ Welcome to DeFi4NFT!
 
 Guide
 ^^^^^
-Defi4NFT dapp is an NFT collateralizing app on Algorand. Which let's you use any NFT you hold in Algorand as leverage for borrowing stable coin in DeFi4NFT.
-Leveraged NFT remains locked in your (*borrower*) address until the full loan amount is repaid, which is a **pure non-custodial** transaction.
-Assets(NFT) that require KYC or special permissions might benefit from this *pure non-custodial protocol*.
+DeFi4NFT is a borrow/lend platform for NFTs on Algorand. At the core a state machine stores the loan health of a pure non-custodial borrow/lend protocol.
 
-With a 3% return for liquidity providers that supply liquidity to the protocol, Defi4 becomes the go-to site for delivering liquidity for NFTs.
-Liquidity providers will keep their liquidity asset in their account until a borrower uses it, at which point the protocol will reward them with an I-O-U stable-coin token plus 3% of the lent amount.
+**Pure non-custodial** means assets remain in the owner’s wallet, for borrowers this means collateral assets remain *frozen in address*. And for liquidity providers this means creating a *delegated logicSig* promising to provide a loan when a borrower matches, aka promise. And for liquidators this means a three way transaction, where the end receiver is a third party buyer willing to buy the borrower’s collateral NFT and the liquidator pays the debt of the borrower while a third party buyer sends payment of the collateral NFT to liquidator. This system is set up so permissioned tokens can be open to receive liquidity from non-whitelisted addresses.
 
 .. toctree::
    :maxdepth: 2
 
    getting_started.md
-   install.md
+   neos.md
    technical_review.md
+   install.md
    troubleshooting.md
    more.md
    contact.md
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
