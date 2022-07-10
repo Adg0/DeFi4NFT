@@ -74,39 +74,5 @@ You can transfer USDC from any chain supported by circle bridge to any algorand 
 You will recieve the deposited amount in your Algorand address soon.
 For testing purposes we recommend using smaller amounts.
 
-### Card deposit
-
-To create a card deposite into your algorand address, follow this steps:
-
-1. Create a circle wallet
-
-[![Create wallet](assets/images/create_wallet.png)](https://youtu.be/4n19YhPuku4?t=95 "Create wallet")
-
-2. Name your wallet
-
-[![Create wallet](assets/images/create_wallet2.png)](https://youtu.be/4n19YhPuku4?t=95 "Create wallet")
-
-3. Select the newly created wallet or any wallet you prefer
-
-[![Select wallet](assets/images/select_wallet.png)](https://youtu.be/4n19YhPuku4?t=95 "Select wallet")
-
-4. Then add a credit/debit card information. It is encrypted on client side, and secured as per the standards
-
-[![Add card](assets/images/add_card.png)](https://youtu.be/4n19YhPuku4?t=95 "Add card")
-
-5. Add billing information for your card.
-
-[![Add card 1](assets/images/add_card2.png)](https://youtu.be/4n19YhPuku4?t=95 "Billing Address")
-
-6. Select your card from list of cards.
-
-[![Select card](assets/images/select_card.png)](https://youtu.be/4n19YhPuku4?t=95 "Select card")
-
-7. Fill in the amount you want to charge into your algorand address, and for fraud protection fill in the `cvv`. For testing all cards use `123`.
-
-[![Make payment](assets/images/make_payment.png)](https://youtu.be/4n19YhPuku4?t=95 "Make payment")
-
-Then you'll get a deposit arrive in your algorand address linked to the wallet you selected within about 10 to 30 minutes.
-
 For more, look into Techincal review.
 
