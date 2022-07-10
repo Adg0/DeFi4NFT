@@ -22,9 +22,9 @@ sequenceDiagram
       DeFi4NFT->DeFi4NFT: Return loan health
   end
   Note right of DeFi4NFT: If loan is health <br>just reject liquidation request.
-  Liquidatee-->Liquidator: Clawedback NFT
+  Borrower-->Liquidator: Clawedback NFT
   Liquidator->DeFi4NFT: Sends owed debt
-  Liquidatee-->DeFi4NFT: Unfreeze remaining loan
+  Borrower-->DeFi4NFT: Unfreeze account for remaning collateral asset
 ```
 
 * Specify the addresss to liquidate
@@ -55,8 +55,7 @@ Manager contract creates all other contracts on behalf of creator address. It al
 ```{admonition} Notice
 :class: info
 
-We have implemented here the Freeze admin and Clawback of algorand ASA. And also IPFS for storing delegated LogicSig. We have also used Circle APIs for blockchain swap and card payment.
-Other notable mention:...
+We have implemented here the Freeze admin and Clawback of algorand ASA. And IPFS for storing delegated LogicSig. We have also used Circle APIs for blockchain swap.
 ```
 
 ```{mermaid}
@@ -66,7 +65,7 @@ sequenceDiagram
   loop Search for lenders
       Borrower->Borrower: Found Lenders
   end
-  Note right of Borrower: If no lenders, <br/>better luck next time
+  Note right of Borrower: If no lenders, <br/>transaction fails
   Lender X->Borrower: Receive promised loan
   DeFi4NFT-->Lender X: Decrement maximum allowed amount
   DeFi4NFT-->Borrower: Freeze collateral NFT

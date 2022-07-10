@@ -21,14 +21,5 @@ Visit setting up [algorand sandbox](https://github.com/algorand/sandbox#algorand
 $ cd cmd
 $ go install .
 $ ./cmd
-// scroll down to bottom, where it says Configure DeFi4NFT
->> Interact with DeFi4NFT: 
-	Configure DeFi4NFT
-// select any
->> Choose which account to you would like to use:
-	<algorand address>
-// select Create DeFi4NFT
->> Configure DeFi4NFT:
-	Create DeFi4NFT
 ```
 

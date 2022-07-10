@@ -14,8 +14,9 @@ Liquidity providers will keep their liquidity asset in their account until a bor
    :maxdepth: 2
 
    getting_started.md
-   install.md
+   neos.md
    technical_review.md
+   install.md
    troubleshooting.md
    more.md
    contact.md

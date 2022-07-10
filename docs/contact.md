@@ -1,6 +1,6 @@
 # Future
 
-We plan on releasing this project on mainnet.
+The next step for DeFi4NFT is to setup a voice command system so there would be more immersion for players.
 
 # Contact
 
