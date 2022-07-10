@@ -14,6 +14,7 @@ Pure non-custodial means assets remain in the owner’s wallet, for borrowers th
 [Documentation](https://defi4nft.readthedocs.io/en/latest)
 
 [Live Demo](https://defi4nft.vercel.app) 
+|
 [Simple Live demo site](https://simpled4t.vercel.app)
 
 [Medium article](https://medium.com/p/b99ac17d20ce)
