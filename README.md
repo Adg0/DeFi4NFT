@@ -5,7 +5,7 @@
 
 [![d4t logo](/docs/assets/images/logo.gif)](https://youtu.be/4n19YhPuku4 "DeFi4NFT introduction video")
 
-[![DeFi4NFT's Algorand world Full Tutorial](https://img.youtube.com/vi/7aVnVE8PADg/0.jpg)](https://youtu.be/7aVnVE8PADg)
+[![DeFi4NFT's Algorand world Full Tutorial](https://img.youtube.com/vi/7aVnVE8PADg/0.jpg)](https://youtu.be/7aVnVE8PADg "Algorand world tutorial)
 
 DeFi4NFT is a borrow/lend platform for NFTs on Algorand. At the core a state machine stores the loan health of a pure non-custodial borrow/lend protocol.
 
