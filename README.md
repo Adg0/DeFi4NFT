@@ -21,7 +21,9 @@ Pure non-custodial means assets remain in the owner’s wallet, for borrowers th
 
 [Medium article](https://medium.com/p/b99ac17d20ce)
 
-Neos world -> Algorand
+[Algorand game world in Neos](neosrec:///U-1egen/R-41a7cb88-b5d1-4cce-a8cd-c2885bafda30)
+|
+neosrec:///U-1egen/R-41a7cb88-b5d1-4cce-a8cd-c2885bafda30
 
 # Contact
 
